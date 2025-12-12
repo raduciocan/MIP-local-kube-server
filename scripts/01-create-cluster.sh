@@ -9,6 +9,12 @@ else
   echo "registry.localhost already present in /etc/hosts (WSL)"
 fi
 
+# Start docker engine manually (without systemd):
+# sudo dockerd > /tmp/dockerd.log 2>&1 &
+
+# Regenerate kubeconfig from k3d:
+# k3d kubeconfig get mip-server > ~/.kube/config
+
 k3d cluster create mip-server \
   --servers 1 \
   --agents 2 \
