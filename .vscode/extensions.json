@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "inercia.vscode-k3d",
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "mongodb.mongodb-vscode"
+  ]
+}

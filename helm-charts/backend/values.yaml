@@ -1,0 +1,30 @@
+replicaCount: 1
+
+image:
+  repository: registry.localhost:5000/backend
+  tag: "1.0.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+env:
+  MONGO_URI: "mongodb://MIP_User:MIP_Pass@mongo-mongodb.default.svc.cluster.local:27017/MIP_DB?authSource=MIP_DB"
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
+
+podAnnotations: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

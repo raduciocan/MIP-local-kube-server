@@ -1,0 +1,30 @@
+replicaCount: 1
+
+image:
+  repository: registry.localhost:5000/frontend
+  tag: "1.0.0"
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 4173
+
+env:
+  MIP_BACKEND_URL: "/api"
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
+
+podAnnotations: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
